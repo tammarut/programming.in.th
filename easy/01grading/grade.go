@@ -23,30 +23,31 @@ func main() {
 		fmt.Println("Please key 0-30!")
 	}
 
-	sum := a + b + c
+	fmt.Println(getGrade(a + b + c))
+
+}
+
+func getGrade(sum int) string {
 	if sum >= 80 && sum <= 100 {
-		fmt.Println("A")
+		return "A"
 	}
 	if sum >= 75 && sum <= 79 {
-		fmt.Println("B+")
+		return "B+"
 	}
 	if sum >= 70 && sum <= 74 {
-		fmt.Println("B")
+		return "B"
 	}
 	if sum >= 65 && sum <= 69 {
-		fmt.Println("C+")
+		return "C+"
 	}
 	if sum >= 60 && sum <= 64 {
-		fmt.Println("C")
+		return "C"
 	}
 	if sum >= 55 && sum <= 59 {
-		fmt.Println("D+")
+		return "D+"
 	}
 	if sum >= 50 && sum <= 54 {
-		fmt.Println("D")
+		return "D"
 	}
-	if sum < 50 {
-		fmt.Println("F")
-	}
-
+	return "F"
 }
