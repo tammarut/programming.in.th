@@ -54,3 +54,26 @@ func TestGetGradeWhenPassSum49ShouldReturnF(t *testing.T) {
 		t.Error("Expected: D", "but Got->", result)
 	}
 }
+
+func TestGetGrade_WhenPassTableScore_ShouldReturnGrade(t *testing.T) {
+	var mocks = []struct {
+		score int
+		grade string
+	}{
+		{80, "A"},
+		{75, "B+"},
+		{70, "B"},
+		{65, "C+"},
+		{60, "C"},
+		{55, "D+"},
+		{54, "D"},
+		{49, "F"},
+	}
+
+	for _, v := range mocks {
+		result := getGrade(v.score)
+		if result != v.grade {
+			t.Errorf("Expected: %s but Got: %s", v.grade, result)
+		}
+	}
+}
