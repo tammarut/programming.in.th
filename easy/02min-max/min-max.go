@@ -1,14 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 func main() {
 	var box []int
 
-	for i := 0; i < 5; i++ {
+	fmt.Println("Enter 5 numbers")
+	for i := 1; i <= 5; i++ {
 		var input int
-		fmt.Print("Enter 5 numbers: ")
+		fmt.Printf("\t %d)", i)
 		fmt.Scanln(&input)
+		if input < 1 || input > 1000 {
+			log.Println("Error: Please key 1-1000!")
+		}
 		box = append(box, input)
 	}
 
