@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"sort"
 )
 
 func main() {
@@ -19,5 +20,5 @@ func main() {
 		box = append(box, input)
 	}
 
-	fmt.Println(box)
+	sort.Ints(box)
 }
