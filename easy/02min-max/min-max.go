@@ -7,21 +7,24 @@ import (
 )
 
 func main() {
-	var box []int
+	var size int
 
-	fmt.Println("Enter 5 numbers")
-	for i := 1; i <= 5; i++ {
-		var input int
-		fmt.Printf("\t %d)", i)
+	fmt.Print("Enter size of box: ")
+	fmt.Scanln(&size)
+
+	box := make([]int, size)
+
+	fmt.Printf("Enter %d numbers\n", size)
+	for i := 0; i < len(box); i++ {
+		fmt.Printf("\t %d)", i+1)
 
 		for {
-			fmt.Scanln(&input)
-			if input >= 1 && input <= 1000 {
+			fmt.Scanln(&box[i])
+			if box[i] >= 1 && box[i] <= 1000 {
 				break
 			}
 			log.Println("Please key 1-1000!")
 		}
-		box = append(box, input)
 	}
 
 	sort.Ints(box)
