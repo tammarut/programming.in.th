@@ -12,8 +12,6 @@ import "fmt"
 func main() {
 	m := 3
 	n := 3
-	fmt.Println(m, n)
-
 	A := [3][3]int{
 		{1, 2, 3},
 		{3, 2, 1},
@@ -24,5 +22,13 @@ func main() {
 		{1, 1, 1},
 		{1, 1, 1},
 	}
-	fmt.Printf("%v\n%v\n", A, B)
+	var C [3][3]int
+
+	for row := 0; row < m; row++ {
+		for column := 0; column < n; column++ {
+			C[row][column] = A[row][column] + B[row][column]
+		}
+	}
+
+	fmt.Println(C)
 }
