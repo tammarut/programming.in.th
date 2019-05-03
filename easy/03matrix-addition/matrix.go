@@ -10,25 +10,33 @@ import "fmt"
 */
 
 func main() {
+	//=>row
 	m := 3
+	//=>column
 	n := 3
+
+	//=>matrix A
 	A := [3][3]int{
 		{1, 2, 3},
 		{3, 2, 1},
 		{1, 3, 2},
 	}
+	//=>matrix B
 	B := [3][3]int{
 		{1, 1, 1},
 		{1, 1, 1},
 		{1, 1, 1},
 	}
+	//=>empty matrix C
 	var C [3][3]int
 
+	//=>Plus matrix
 	for row := 0; row < m; row++ {
 		for column := 0; column < n; column++ {
 			C[row][column] = A[row][column] + B[row][column]
 		}
 	}
 
+	//=>Display successful matrix C
 	fmt.Println(C)
 }
